@@ -1,0 +1,339 @@
+/* New minimalist design styling */
+:root {
+  --background-color: #ffffff;
+  --section-bg-color: #e2e8f0;
+  --text-color: #000000;
+  --border-color: #e6e6e6;
+  --accent-color: #333333;
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.4;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styling */
+.site-header {
+  text-align: center;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border-color);
+  width: 100%;
+}
+
+.site-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.site-subtitle {
+  color: slategray;
+  font-size: 0.85rem;
+  margin: 0.25rem 0 0;
+}
+
+/* Introduction section */
+.intro-section {
+  padding: 4rem 0;
+  text-align: center;
+  width: 100%;
+}
+
+.intro-text {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.intro-text p {
+  font-size: 1rem;
+  line-height: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+/* Profile section */
+.profile-section {
+  width: 100%;
+  padding: 2rem 0;
+  background-color: var(--section-bg-color);
+  margin-bottom: 5rem;
+}
+
+.profile-content {
+  display: flex;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  gap: 3rem;
+}
+
+.profile-image-container {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 3px solid black;
+  margin-left: -1rem;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 0% 90%;
+}
+
+.profile-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.blockquote {
+  border-left: 4px solid #000;
+  padding-left: 1.5rem;
+  font-style: italic;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .blockquote {
+    font-size: 1.5rem;
+  }
+}
+
+.quote-author {
+  text-align: right;
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.bio {
+  margin-bottom: 1rem;
+}
+
+/* Posts section */
+.posts-section {
+  width: 100%;
+  padding: 3rem 0;
+  /* border-top: 1px solid var(--border-color); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.post-list {
+  list-style: none;
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+/* For empty posts message */
+.no-posts-message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  font-style: italic;
+  margin: 2rem 0;
+  padding: 2rem;
+  border: 1px dashed var(--border-color);
+  border-radius: 6px;
+  width: 100%;
+}
+
+.post-item {
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  transition: border-color 0.5s ease;
+}
+
+.post-item:hover {
+  border-color: #111010;
+}
+
+.post-date {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.post-date svg {
+  margin-right: 0.5rem;
+}
+
+.post-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.post-excerpt {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: dimgray;
+}
+
+.post-link, .read-more-link {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 0.9rem;
+}
+
+.post-link:hover, .read-more-link:hover {
+  text-decoration: underline;
+}
+
+/* Load more button */
+.load-more {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 0.5rem 2rem;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  text-decoration: none;
+}
+
+.load-more:hover {
+  background-color: #444;
+  text-decoration: none;
+}
+
+/* Expanded posts section */
+.expanded-posts-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--background-color);
+  padding: 2rem;
+  overflow-y: auto;
+  z-index: 100;
+  display: none;
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.5rem;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 2rem 0;
+  color: #666;
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Shots page styles */
+.shots-container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.shots-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  background-color: var(--section-bg-color);
+  margin-bottom: 3rem;
+}
+
+.shots-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.shots-content {
+  padding: 0 0 3rem 0;
+}
+
+.shots-list {
+  list-style: none;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.back-link svg {
+  margin-right: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .profile-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .profile-image-container {
+    margin-bottom: 1.5rem;
+  }
+  
+  .quote-author {
+    text-align: center;
+  }
+} 
